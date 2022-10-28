@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <label for="adu1">Nhap A</label>
+        <input required id="adu1" type="number" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" />
+        <label for="adu2">Nhap B</label>
+        <input id="adu2" type="number" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" required />
+
+    </div>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 50px;
+      ">
+        <button class="btn" id="btn1" style="margin-top: 10px">Tinh A + B</button>
+        <button class="btn" id="btn2" style="margin-top: 10px">Tinh A - B</button>
+        <button class="btn" id="btn3" style="margin-top: 10px">Tinh A * B</button>
+        <button class="btn" id="btn4" style="margin-top: 10px">Tinh A / B</button>
+        <button class="btn" id="btn5" style="margin-top: 10px">Tinh A % B</button>
+    </div>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <h2>dau ra</h2>
+        <h2 id="ketqua"></h2>
+    </div>
+</body>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const btn = $$(".btn");
+
+    const input1 = $("#adu1");
+    const input2 = $("#adu2");
+    const ketqua = $("#ketqua")
+
+    const btnArr = Array.from(btn)
+
+    btnArr.forEach(b => {
+        b.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!input1.value) {
+                return alert("chua nhap A")
+            }
+            if (!input2.value) {
+                return alert("chua nhap B")
+            }
+            if (this.id === "btn1")
+                return ketqua.textContent = Number(input1.value) + Number(input2.value)
+            if (this.id === "btn2")
+                return ketqua.textContent = Number(input1.value) - Number(input2.value)
+            if (this.id === "btn3")
+                return ketqua.textContent = Number(input1.value) * Number(input2.value)
+            if (this.id === "btn4")
+                return ketqua.textContent = Number(input1.value) / Number(input2.value)
+            if (this.id === "btn5")
+                return ketqua.textContent = Number(input1.value) % Number(input2.value)
+        });
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <label for="aduuuu">Nhap cac so nguyen</label>
+        <input if="aduuuu" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" name="name" />
+        <h2>dau vao</h2>
+        <p id="values"></p>
+        <h2>danh sach cac so hop le</h2>
+        <p id="number"></p>
+        <h2>danh sach so nguyen to</h2>
+        <p id="ngto"></p>
+    </div>
+</body>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("input");
+    const log = $("#values");
+    const ngto = $("#ngto");
+    const number = $("#number");
+    // const log = document.getElementById('values');
+    // const ngto = document.getElementById('ngto');
+    // const number = document.getElementById('number');
+
+    let arr = [];
+    let valueInput;
+
+    input.addEventListener("input", updateValue);
+
+    function updateValue(e) {
+        log.textContent = e.target.value;
+        valueInput = e.target.value.split(" ");
+        arr = valueInput.filter((v) => {
+            if (v.trim() && v == Number(v)) return v;
+        });
+        number.textContent = arr;
+
+        const adu = arr.filter((a) => {
+            if (isNgto(a)) return a;
+        });
+        ngto.textContent = adu;
+    }
+
+    const isNgto = (n) => {
+        var adu = true;
+        if (n < 2)
+            adu = false;
+        else
+            // lặp từ 2 tới n-1
+            for (var i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    adu = false;
+                    break;
+                }
+            }
+        return adu;
+    };
+</script>
+
+</html>

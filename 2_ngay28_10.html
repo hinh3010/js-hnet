@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <label for="aduuuu">Nhap cac so nguyen</label>
+        <input id="aduuuu" type="number" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text"
+            name="name" />
+        <h2>dau ra</h2>
+        <h2 id="ngto"></h2>
+    </div>
+</body>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("input");
+    const ngto = $("#ngto");
+
+    input.addEventListener("input", updateValue);
+
+    function updateValue(e) {
+        const valueInput = e.target.value.split("");
+        input.value = valueInput[valueInput.length - 1]
+        switch (valueInput[valueInput.length - 1]) {
+            case '0':
+                ngto.textContent = "Khong";
+                break;
+            case '1':
+                ngto.textContent = "Mot";
+                break;
+            case '2':
+                ngto.textContent = "Hai";
+                break;
+            case '3':
+                ngto.textContent = "Ba";
+                break;
+            case '4':
+                ngto.textContent = "Bon";
+                break;
+            case '5':
+                ngto.textContent = "Nam";
+                break;
+            case '6':
+                ngto.textContent = "Sau";
+                break;
+            case '7':
+                ngto.textContent = "Bay";
+                break;
+            case '8':
+                ngto.textContent = "Tam";
+                break;
+            case '9':
+                ngto.textContent = "Chin";
+                break;
+
+            default:
+                break;
+        }
+        // input.value = ''
+    }
+
+</script>
+
+</html>
