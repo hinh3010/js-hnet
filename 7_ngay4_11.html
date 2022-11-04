@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <label for="adu1">Nhap</label>
+        <input id="input" type="number" required style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" />
+    </div>
+
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <h2>Ket qua</h2>
+        <h2 id="ketqua"></h2>
+    </div>
+</body>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("#input");
+    const kq = $("#ketqua");
+
+    input.addEventListener("input", function (e) {
+        let arrChan = []
+        let arrLe = []
+        e.preventDefault();
+        e.stopPropagation();
+        for (let i = 1; i < Number(input.value); i++) {
+            console.log({ i })
+            if (i % 2 == 0) {
+                arrChan.push(i)
+            } else {
+                arrLe.push(i)
+            }
+        }
+        kq.innerHTML = `
+        <h3>Cac so chan la : ${arrChan.join(", ")}</h3>
+        <h3>Cac so chan le : ${arrLe.join(", ")}</h3>
+        `
+    });
+
+</script>
+
+</html>
