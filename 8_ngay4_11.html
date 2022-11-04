@@ -22,7 +22,7 @@
         flex-direction: column;
         margin-top: 50px;
       ">
-        <h1>Trần Văn Hinh</h1>
+        <h1 id="nguon"></h1>
         <label for="aduuuu">Nhap cac so (mỗi số cách nhau 1 dấu cách)</label>
         <input id="input" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" name="name" />
         <h2>dau vao</h2>
@@ -41,6 +41,7 @@
     const log = $("#values");
     const kq = $("#ketqua");
     const number = $("#number");
+    const nguon = $("#nguon");
 
     let arr = [];
     let valueInput;
@@ -73,6 +74,7 @@
         <h3>Trung bình cộng các số chẵn là là : ${tong / dem}</h3>
         `
     }
+    nguon.textContent = "Trần Văn Hinh"
 
 </script>
 
