@@ -63,7 +63,7 @@
         for (let index = 0; index < arr.length; index++) {
             if (arr[index] > max) max = arr[index];
             if (arr[index] < min) min = arr[index];
-            if (arr[index] % 2 == 0) {
+            if (arr[index] % 2 == 0 && arr[index] > 0) {
                 dem++
                 tong += Number(arr[index]);
             }
@@ -71,7 +71,7 @@
         kq.innerHTML = `
         <h3>Số lớn nhất là : ${max}</h3>
         <h3>Số bé nhất là : ${min}</h3>
-        <h3>Trung bình cộng các số chẵn là là : ${tong / dem}</h3>
+        ${dem > 0 ? `<h3>Trung bình cộng các số chẵn là là : ${tong / dem}</h3>` : "<h3>Không có số chẵn nào</h3>"}
         `
     }
     nguon.textContent = "Trần Văn Hinh"

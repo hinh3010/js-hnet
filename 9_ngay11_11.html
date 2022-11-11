@@ -1,0 +1,92 @@
+<!-- 
+Chuyển số nhị phân sang thập phân.
+Hệ thập phân: 1234 = 1 * 10^3 + 2 * 10^2 + 3 * 10^1 + 4 * 10^0
+Hệ nhị phân: 101 = 1 * 2^2 + 0 * 2^1 + 1 * 2^0
+
+Cách chuyển:
+n = 8
+0, 4 => 8 % 2 * 10 ^ 0
+0, 2 => 4 % 2 * 10 ^ 1
+0, 1 => 2 % 2 * 10 ^ 2
+1, 0 => 1 % 2 * 10 ^ 3
+int kq = 1000
+
+
+Chuyển số nhị phân sang thập phân.
+Hệ thập phân: 1234 = 1 * 10^3 + 2 * 10^2 + 3 * 10^1 + 4 * 10^0
+Hệ nhị phân: 101 = 1 * 2^2 + 0 * 2^1 + 1 * 2^0
+
+1110: 0 + 2 + 4 + 8 = 14
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ec</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <h1 id="nguon">Trần Văn Hinh</h1>
+        <label for="input">Nhap</label>
+        <input type="number" id="input" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" />
+        <h2>Ket qua</h2>
+        <p id="ketqua"></p>
+    </div>
+</body>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("#input");
+    const kq = $("#ketqua");
+
+    input.addEventListener("input", updateValue);
+
+    function updateValue(e) {
+        const res = Dec2Bin(Number(e.target.value));
+        kq.textContent = res
+    }
+
+    function Dec2Bin(number) {
+        let binaryNumber = 0;
+        let p = 0;
+        while (number > 0) {
+            binaryNumber += (number % 2) * Math.pow(10, p);
+            ++p;
+            number = Math.floor(number / 2);
+        }
+
+        return binaryNumber;
+    }
+
+    function BinToDec(number) {
+        let p = 0;
+        let decNumber = 0;
+        while (number > 0) {
+            decNumber += (number % 10) * Math.pow(2, p);
+            ++p;
+            number = Math.floor(number / 10);
+        }
+        return decNumber;
+    }
+
+</script>
+
+</html>

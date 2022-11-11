@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ec</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <h1 id="nguon">Trần Văn Hinh</h1>
+        <label for="input">Nhap</label>
+        <input type="number" id="input" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" />
+        <h2>Ket qua</h2>
+        <p id="ketqua"></p>
+    </div>
+</body>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("#input");
+    const kq = $("#ketqua");
+
+    input.addEventListener("input", updateValue);
+
+    function updateValue(e) {
+        let arr = []
+        let n1 = 0, n2 = 1, n3, i;
+        for (i = 2; i < Number(e.target.value); ++i) {
+            n3 = n1 + n2;
+            arr.push(n3);
+            n1 = n2;
+            n2 = n3;
+        }
+        kq.textContent = arr.join(' , ')
+    }
+
+</script>
+
+</html>
