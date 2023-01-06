@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ec</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+      ">
+        <h1 id="nguon">Trần Văn Hinh</h1>
+        <label for="input">Nhap</label>
+        <input type="text" id="input" style="width: 80vw; padding: 4px 20px" placeholder="Enter some text" />
+
+        <h2>Xuat</h2>
+        <h2>danh sach cac p/tu cua mang</h2>
+        <p id="export"></p>
+        <h2>danh sach cac so hop le trong mang</h2>
+        <p id="number"></p>
+
+        <h2>Ket qua</h2>
+        <p id="ketqua"></p>
+    </div>
+</body>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const input = $("#input");
+    const kq = $("#ketqua");
+    const ex = $("#export");
+    const num = $("#number");
+
+    input.addEventListener("input", updateValue);
+
+    let arr = []
+    let valueInput;
+    function updateValue(e) {
+        valueInput = e.target.value.split(" ");
+
+        ex.textContent = valueInput
+
+        arr = valueInput.filter((v) => {
+            if (v.trim() && v == Number(v)) return v;
+        });
+
+        num.textContent = arr
+
+        arr.sort()
+
+        kq.innerHTML = `
+        <h3>So be nhat la : ${arr[0]}</h3>
+        <h3>So lon nhat la : ${arr[arr.length - 1]}</h3>
+        `
+    }
+
+
+</script>
+
+</html>

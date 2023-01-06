@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiem tra :: Tran Van Hinh</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        /* .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: red;
+        } */
+
+        .bai-tap {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hello {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark hello">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#bai1">Bai 1<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#bai2">Bai 2<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#bai3">Bai 3<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#bai4">Bai 4<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="main">
+        <div id="bai1" class="bai-tap">
+            <h3>Bai 1 : Nhap diem trung binh in ra xep hang</h3>
+            <input class="input-diem-tb" type="number" placeholder="Nhap diem trung binh">
+            <p class="output-diem-tb"></p>
+        </div>
+        <div id="bai2" class="bai-tap">
+            <h3>Bai 2 : Nhap so in ra mang sap xep tang dan</h3>
+            <form class="form-2">
+                <input class="input-a" type="text" placeholder="Nhap number">
+                <hr>
+                <input class="input-b" type="text" placeholder="Nhap number">
+                <hr>
+                <button>Check</button>
+            </form>
+            <p class="output-bai2"></p>
+        </div>
+        <div id="bai3" class="bai-tap">
+            <h3>Bai 3 : Them 1 phan tu vao vi tri bat ki trong mang</h3>
+            <forn class="form-3">
+                <p class="currentArr"></p>
+                <input required class="input-bai3" type="text" placeholder="Nhap text">
+                <hr>
+                <input required class="input-vt" type="number" placeholder="Vi tri">
+                <hr>
+                <button class="button-3" type="submit">Add</button>
+            </forn>
+            <p class="output-bai3"></p>
+        </div>
+        <div id="bai4" class="bai-tap">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Bai 4 : Nhap thong tin
+            </button>
+            <h3 class="output-bai4"></h3>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nhap thong tin</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-4 mb-4">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ho ten</label>
+                                    <input type="text" class="form-control hoten" aria-describedby="emailHelp"
+                                        placeholder="Nhap ho ten">
+                                    <small id="emailHelp" class="form-text text-muted">hehehe</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ngay sinh</label>
+                                    <input type="date" class="form-control ngaysinh" aria-describedby="emailHelp"
+                                        placeholder="Nhap ngay sinh">
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="exampleInputEmail1">Gioi tinh</label>
+                                    <input type="email" class="form-control gioi tinh" aria-describedby="emailHelp"
+                                        placeholder="Nhap gioi tinh">
+                                </div> -->
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input gioitinh" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Gioi tinh</label>
+                                </div>
+
+                                <button type="submit" class="m-2 btn btn-primary botton-4">Submit</button>
+                            </form>
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const showRankByDiemTb = (e) => {
+        const diemTb = e.target.value
+        if (diemTb < 0 || diemTb > 10) {
+
+        }
+    }
+</script>
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    // bai 1
+    const inputDiemTb = $('.input-diem-tb')
+    const outputDiemTb = $('.output-diem-tb')
+    inputDiemTb.addEventListener("input", (e) => {
+        try {
+            const diemTb = e.target.value
+
+            if (diemTb < 0 || diemTb > 10) {
+                outputDiemTb.textContent = 'Vui long nhap diem hop le'
+            } else {
+                diemTb > 8
+                    ? outputDiemTb.textContent = 'Hoc sinh Gioi'
+                    : diemTb > 6
+                        ? outputDiemTb.textContent = 'Hoc sinh Kha'
+                        : diemTb > 4
+                            ? outputDiemTb.textContent = 'Hoc sinh Trung Binh'
+                            : outputDiemTb.textContent = 'Hoc sinh Yeu'
+            }
+        } catch (error) {
+            outputDiemTb.textContent = 'Vui long nhap diem hop le'
+        }
+    });
+
+    // bai 2
+    const inputA = $('.input-a')
+    const inputB = $('.input-b')
+    const outputBai2 = $('.output-bai2')
+    const form2 = $('.form-2')
+    form2.addEventListener("submit", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const arrA = inputA.value.split(' ')
+        const arrB = inputB.value.split(' ')
+
+        const arrTang = [...arrA, ...arrB]
+
+        const adu = arrTang.filter((v) => {
+            if (v.trim() && v == Number(v)) return v;
+        });
+
+        outputBai2.textContent = adu.sort().join(' , ')
+    });
+
+
+    // bai 3
+    const currArr = [1, 2, 3, 4, 5, 6]
+    const currentArr = $('.currentArr')
+    currentArr.textContent = currArr.join(' , ')
+    const inputBai3 = $('.input-bai3')
+    const inputVt = $('.input-vt')
+    const outputBai3 = $('.output-bai3')
+    const form3 = $('.form-3')
+    const button3 = $('.button-3')
+    button3.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!inputBai3.value.trim()) return
+        if (inputVt.value >= currArr.length) {
+            currArr.push(inputBai3.value)
+        } else if (inputVt.value <= 0) {
+            currArr.unshift(inputBai3.value)
+        } else {
+            currArr.splice(inputBai3.value, 0, inputVt.value)
+        }
+        currentArr.textContent = currArr.join(' , ')
+    });
+
+    // bai 4
+    const botton4 = $('.botton-4')
+    const hoten = $('.hoten')
+    const ngaysinh = $('.ngaysinh')
+    const gioitinh = $('.gioitinh')
+    const outputBai4 = $('.output-bai4')
+
+    botton4.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const info = {
+            hoten: hoten.value,
+            ngaysinh: ngaysinh.value,
+            gioitinh: gioitinh.checked ? 'Nam' : 'Nu',
+        }
+        outputBai4.textContent = JSON.stringify(info)
+    })
+
+</script>
+
+</html>
